@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>竖向排列横向展开滑动门</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #f4f7fa;
+    font-family: "Microsoft Yahei", sans-serif;
+    padding: 40px 20px;
+  }
+
+  .tip {
+    text-align: center;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  /* 外层竖向排列 */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* 每一个一级项 */
+  .menu-item {
+    position: relative;
+    background: #2c3e50;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 64px;
+    cursor: pointer;
+  }
+
+  /* 一级标题固定在左侧 */
+  .menu-item > h1 {
+    position: relative;
+    z-index: 3;
+    font-size: 18px;
+    line-height: 64px;
+    padding-left: 20px;
+    background: #2c3e50;
+    width: 180px;
+  }
+
+  /* 二级内容：默认隐藏在右侧外面 */
+  .submenu {
+    position: absolute;
+    top: 0;
+    left: 180px;
+    width: 0;
+    height: 100%;
+    background: #3498db;
+    overflow: hidden;
+    transition: width 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 二级标题 */
+  .submenu h2 {
+    font-size: 15px;
+    color: #fff;
+    white-space: nowrap;
+    padding: 0 24px;
+  }
+
+  /* hover 时横向展开 */
+  .menu-item:hover .submenu {
+    width: 100%;
+  }
+</style>
+</head>
+
+<body>
+
+<p class="tip">竖向排列，鼠标悬浮横向展开</p >
+
+<div class="menu">
+
+  <div class="menu-item">
+    <h1>📚 课程学习</h1>
+    <div class="submenu">
+      <h2>1.1 HTML基础语法</h2>
+      <h2>1.2 CSS选择器使用</h2>
+      <h2>1.3 JS基础交互</h2>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <h1>🎨 创意设计</h1>
+    <div class="submenu">
+      <h2>2.1 页面配色方案</h2>
+      <h2>2.2 布局排版设计</h2>
+      <h2>2.3 动效方案构思</h2>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <h1>🚀 项目实践</h1>
+    <div class="submenu">
+      <h2>3.1 需求文档梳理</h2>
+      <h2>3.2 代码编写调试</h2>
+      <h2>3.3 项目部署上线</h2>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
